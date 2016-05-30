@@ -5,11 +5,12 @@
 <tr>
 	<td>아이디</td>
 	<td><input type='text' name='id' tabindex='1'/></td>
-	<td rowspan='2'><input type='submit' tabindex='3' value='로그인' style='height:50px'/></td>
+	<td><input type='submit' tabindex='3' value='로그인' /></td>
 </tr>
 <tr>
 	<td>비밀번호</td>
 	<td><input type='password' name='pass' tabindex='2'/></td>
+	<td><input type='button' name='sign_up' value='회원가입' onclick='location.href="sign_up.php"'></td>
 </tr>
 </table>
 </form>
