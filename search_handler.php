@@ -6,7 +6,7 @@
     $dbconn = pg_connect("host=localhost dbname=joonji user=joonji password=Male8723%")
         or die('db 시스템에 연결할 수 없습니다. 관리자에게 문의하십시오: ' . pg_last_error());
         
-    $query = "select * from course where ";
+    $query = "select * from section natural join teach natural join prof natural join course where ";
     $concat = "";
     if(strlen($title . $course_id . $credits . $dept_name) === 0){
         echo "<script>alert('잘못된 입력입니다.');history.back();</script>";
@@ -27,9 +27,14 @@
     $query = substr($query, 0, strlen($query) - 1) . ';';
     $result = pg_query($query)
         or die('db에 문제가 발생했습니다. 관리자에게 문의하십시오.: ' . pg_last_error());
+    $column_num = pg_num_fields($result);
 
     
-    echo "<table>\n";
+    echo "<table>\n<tr>\n";
+    for($i = 0 ; $i < $column_num; $i++){
+        echo "<th>". pg_field_name($result, $i) ."</th>";
+    }
+    echo "</tr>";
     while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
         echo "\t<tr>\n";
         foreach ($line as $col_value) {
