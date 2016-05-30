@@ -35,7 +35,7 @@
                 nullCount+=1;
             }
         }
-        if(nullCount === 4){
+        if(nullCount === arrToConfirm.length){
             alert("최소한 하나의 값을 입력하세요!");
         }
         else{
