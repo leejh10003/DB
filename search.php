@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <form method='get' id='searchData' action='search_handler.php'>
-<table>
-<tr>
-	<td>과목명</td>
-	<td><input id='titleTextBox' type='text' name='title'/></td>
-    <td><input type='button' value='검색' rowspan=4 onClick="searchButton()"/></td>
-</tr>
-<tr>
-    <td>학수번호</td>
-	<td><input type='text' name='course_id'/></td>
-</tr>
-<tr>
-    <td>학점</td>
-	<td colspan=2>
-        <input type='radio' name='credits' value checked>고려하지 않음</input>
-        <input type='radio' name='credits' value=1>1</input>
-        <input type='radio' name='credits' value=2>2</input>
-        <input type='radio' name='credits' value=3>3</input>
-    </td>
-</tr>
-<tr>
-    <td>학과명</td>
-	<td><input type='text' name='dept_name' tabindex='1'/></td>
-</tr>
-</table>
+    <table>
+        <tr>
+            <td>과목명</td>
+            <td><input id='titleTextBox' type='text' name='title'/></td>
+            <td><input type='button' value='검색' rowspan=4 onClick="searchButton()"/></td>
+        </tr>
+        <tr>
+            <td>학수번호</td>
+            <td><input type='text' name='course_id'/></td>
+        </tr>
+        <tr>
+            <td>학점</td>
+            <td colspan=2>
+                <input type='radio' name='credits' value checked>고려하지 않음</input>
+                <input type='radio' name='credits' value=1>1</input>
+                <input type='radio' name='credits' value=2>2</input>
+                <input type='radio' name='credits' value=3>3</input>
+            </td>
+        </tr>
+        <tr>
+            <td>학과명</td>
+            <td><input type='text' name='dept_name' tabindex='1'/></td>
+        </tr>
+    </table>
 </form>
 <script>
     function searchButton(){
