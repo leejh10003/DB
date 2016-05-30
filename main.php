@@ -7,12 +7,12 @@
   <body>
     <?php
       session_start();
-      if(!isset($_SESSION['id'])) {
+      if(!isset($_SESSION['member_id'])) {
         echo "<meta http-equiv='refresh' content='0;url=login.php'>";
         exit;
       }
-      $ID = $_SESSION['id'];
-      echo "<p>안녕하세요. " . $ID . "님</p>";
+      $member_id = $_SESSION['member_id'];
+      echo "<p>안녕하세요. " . $member_id . "님</p>";
       echo "<p><button onclick=\"location.href='logout.php'\">로그아웃</a></p>";
     ?>
   </body>

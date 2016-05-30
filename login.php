@@ -4,7 +4,7 @@
 <table>
 <tr>
 	<td>아이디</td>
-	<td><input type='text' name='id' tabindex='1'/></td>
+	<td><input type='text' name='member_id' tabindex='1'/></td>
 	<td><input type='submit' tabindex='3' value='로그인' /></td>
 </tr>
 <tr>

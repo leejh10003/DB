@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 
     <?php
-    if(isset($_SESSION['id'])){
+    if(isset($_SESSION['member_id'])){
     echo
     "<form method='get' id='searchData' action='search_handler.php'>
         <table>
