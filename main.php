@@ -13,6 +13,7 @@
       }
       $ID = $_SESSION['id'];
       echo "<p>안녕하세요. " . $ID . "님</p>";
+      echo "<p><button onclick=\"location.href='logout.php'\">로그아웃</a></p>";
     ?>
   </body>
 </html>
