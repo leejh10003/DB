@@ -1,0 +1,165 @@
+\q
+create table member(
+id varchar(40),
+pass varchar(40),
+primary key(id)
+);
+inser into member values
+('leejh10003', 'Male8723%');
+insert into member values
+('leejh10003', 'Male8723%');
+\q
+select * from member;
+insert into member values('Hello', 'world');
+exit
+select * from member;
+select * from member;
+\q
+create table course(
+course_id char(7),
+title varchar(40) not null,
+dept_name varchar(40) not null,
+dept_name varchar(40) not null,
+credits int not null,
+primary key (course_id),
+check credits > 0);
+create table course(
+course_id char(7),
+title varchar(40) not null,
+dept_name varchar(40) not null,
+dept_name varchar(40) not null,
+credits int not null,
+primary key (course_id),
+check (credits > 0));
+create table course(
+course_id char(7),
+title varchar(40) not null,
+dept_name varchar(40) not null,
+credits int not null,
+primary key (course_id),
+check (credits > 0));
+create table section(
+course_id char(7) references course(course_id),
+sec_id char(2),
+year int,
+semester int,
+primary key(course_id, sec_id, year, semester),
+check (semester > 0),
+check (semester < 3));
+create table prof(
+ID char(10),
+name varchar(40) not null,
+dept_name varchar(40) not null,
+primary key (ID));
+create table teach(
+prof_ID char(10) references prof(ID),
+course_id char(10),
+sec_id char(2),
+year int,
+semester int,
+check (semester < 3),
+check (semester > 0),
+primary key (prof_ID, course_id, sec_id, year, semester),
+foreign key (course_id, sec_id, year, semester) references section(course_id, sec_id, year, semester));
+\q
+\dt
+select * from course;
+insert into course values('IFLS134','전공영문강독Ⅱ', '기초교육원', '3'); 
+select * from course;
+\q
+SELECT * FROM course where credits=3 ;
+\q
+select * from section;
+insert into section values('IFLS134', '03', 2015, 2);
+select * from prof;
+insert into prof values ('2014210001', '전계안', '기초교육원');
+select * from teaches;
+select * from teach;
+insert into teach values ('2014210001', 'IFLS134', '03', 2015, 2);
+select * from section natural join teach natural join prof;
+select * from section natural join teach natural join prof natural join course;
+select * from section;
+select * from teach;
+select * from prof
+;
+select * from course;
+select * from section natural join teach natural join prof(prof_id, name, dept_name) natural join course;
+alter table prof rename column id to prof_id;
+select * from section natural join teach natural join prof natural join course;
+alter table prof rename column dept_name to prof_dept_name;
+select * from section natural join teach natural join prof natural join course;
+select * from section natural join teach natural join prof natural join course;
+\q
+select * from member;
+alter table member rename column id to member_id;
+select * from member;
+\q
+\dt
+\d member
+\d section
+create table evaluation(
+member_id varchar(40) references member(member_id),
+course_id char(7),
+sec_id char(2),
+year int,
+semester int,
+assignment_amount int,
+achievment int,
+learning int,
+test_difficulty int,
+weight int,
+primary key (member_id, course_id, sec_id, year, semester),
+check (semester < 3),
+check (semester > 0),
+check (assignment_amount > 0),
+check (assignment_amount < 6),
+check (achievement >0),
+check (achievement < 6),
+check (learning >0),
+check (learning < 6),
+check (test_difficulty > 0),
+check (test_difficulty < 6),
+check (weight > 0),
+foreign key (course_id, sec_id, year, semester) references section(course_id, sec_id, year, semester));
+create table evaluation(
+member_id varchar(40) references member(member_id),
+course_id char(7),
+sec_id char(2),
+year int,
+semester int,
+assignment_amount int,
+achievement int,
+learning int,
+test_difficulty int,
+weight int,
+primary key (member_id, course_id, sec_id, year, semester),
+check (semester < 3),
+check (semester > 0),
+check (assignment_amount > 0),
+check (assignment_amount < 6),
+check (achievement >0),
+check (achievement < 6),
+check (learning >0),
+check (learning < 6),
+check (test_difficulty > 0),
+check (test_difficulty < 6),
+check (weight > 0),
+foreign key (course_id, sec_id, year, semester) references section(course_id, sec_id, year, semester));
+alter table evaluation add comment varchar(700);
+\d evluation
+\d evaluation
+alter table evaluation add constraint semester not null;
+alter table evaluation add constraint (semester not null);
+\q
+\dt
+\d evaluation
+\q
+alter table evaluation drop column weight
+;
+\d evaluation
+select avg(achievement) from evaluation natural join section natural join teach natural join prof natural join course where course_id='IFLS134' and prof_id='2014210001' and sec_id='03' and year=2015 and semester=2;
+alter table evaluation alter column comment type varchar(40);
+\q
+\d evaluation
+\q
+\s mamber

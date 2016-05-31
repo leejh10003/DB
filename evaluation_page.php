@@ -45,10 +45,10 @@
         }
     echo "</table>\n";
     $query_written_eval = "select * from evaluation where member_id='" . $_SESSION['member_id'] . "';";
-    $member_existence = pg_fetch_array(pg_query($query_written_eval), null, PGSQL_ASSOC)['member_id']
+    $member_existence = pg_query($query_written_eval)
         or die('db에 문제가 발생했습니다. 관리자에게 문의하십시오.: ' . pg_last_error());
-     if($member_existence === $_SESSION['member_id']){
-         echo "<button href=''>평가...</button>";
+     if(!pg_fetch_array($member_existence, null, PGSQL_ASSOC)['member_id']){
+         echo "<button onClick='location.href=\"write.php?course_id=" . $course_id . "&sec_id=" . $sec_id . "&year=" . $year . "&semester=" . $semester . "\"'>평가...</button>";
      }
      else{
          echo "이미 평가 작성을 진행하셨습니다.";
