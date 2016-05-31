@@ -31,7 +31,6 @@
             or die('db에 문제가 발생했습니다. 관리자에게 문의하십시오.: ' . pg_last_error());
         $column_num = pg_num_fields($result);
 
-        
         echo "<table>\n<tr>\n";
         for($i = 0 ; $i < $column_num; $i++){
             echo "<th>". pg_field_name($result, $i) ."</th>";
@@ -42,6 +41,7 @@
             foreach ($line as $col_value) {
                 echo "\t\t<td>$col_value</td>\n";
             }
+            echo "<td><a href='./evaluation_page.php?course_id=" . $line['course_id'] . "&prof_id=" . $line['prof_id'] . "&sec_id=" . $line['sec_id'] . "&year=" . $line['year'] . "&semester=" . $line['semester'] . "'>" .$line['year']. "</td>";
             echo "\t</tr>\n";
         }
         echo "</table>\n";
