@@ -1,14 +1,13 @@
 <?php
     session_start();
     $course_id = $_GET['course_id'];
-    $prof_id = $_GET['prof_id'];
     $sec_id = $_GET['sec_id'];
     $year = $_GET['year'];
     $semester = $_GET['semester'];
     $dbconn = pg_connect("host=localhost dbname=joonji user=joonji password=Male8723%")
         or die('db 시스템에 연결할 수 없습니다. 관리자에게 문의하십시오: ' . pg_last_error());
         
-    $query_base = "from evaluation natural join section natural join teach natural join prof natural join course where course_id='" . $course_id . "' and prof_id='" . $prof_id . "' and sec_id='" . $sec_id . "' and year=" . $year . " and semester=" . $semester;
+    $query_base = "from evaluation natural join section natural join teach natural join prof natural join course where course_id='" . $course_id . "' and sec_id='" . $sec_id . "' and year=" . $year . " and semester=" . $semester;
     $query = "select * " . $query_base . ";";
     $query_avg_assignment = "select avg(assignment_amount) " . $query_base . ";";
     $query_avg_achievement = "select avg(achievement) " . $query_base . ";";

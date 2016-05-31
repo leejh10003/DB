@@ -41,7 +41,7 @@
             foreach ($line as $col_value) {
                 echo "\t\t<td>$col_value</td>\n";
             }
-            echo "<td><a href='./evaluation_page.php?course_id=" . $line['course_id'] . "&prof_id=" . $line['prof_id'] . "&sec_id=" . $line['sec_id'] . "&year=" . $line['year'] . "&semester=" . $line['semester'] . "'>" .$line['year']. "</td>";
+            echo "<td><a href='./evaluation_page.php?course_id=" . $line['course_id'] . "&sec_id=" . $line['sec_id'] . "&year=" . $line['year'] . "&semester=" . $line['semester'] . "'>" .$line['year']. "</td>";
             echo "\t</tr>\n";
         }
         echo "</table>\n";

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
 <?php
     session_start();
     $course_id = $_GET['course_id'];
@@ -20,7 +22,103 @@
             echo "<script>alert('이미 작성하셨습니다.');history.back();</script>";
         }
         else{
-            
+            echo
+                "<form method='post' id='writeData' action='write_handle.php'>
+                    <table>
+                        <tr>
+                            <td>과제량</td>
+                            <td colspan=2>
+                                <input type='radio' name='assignment_amount' value=1>1</input>
+                                <input type='radio' name='assignment_amount' value=2>2</input>
+                                <input type='radio' name='assignment_amount' value=3>3</input>
+                                <input type='radio' name='assignment_amount' value=4>4</input>
+                                <input type='radio' name='assignment_amount' value=5>5</input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>성취감</td>
+                            <td colspan=2>
+                                <input type='radio' name='achievement' value=1>1</input>
+                                <input type='radio' name='achievement' value=2>2</input>
+                                <input type='radio' name='achievement' value=3>3</input>
+                                <input type='radio' name='achievement' value=4>4</input>
+                                <input type='radio' name='achievement' value=5>5</input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>학습량</td>
+                            <td colspan=2>
+                                <input type='radio' name='learning' value=1>1</input>
+                                <input type='radio' name='learning' value=2>2</input>
+                                <input type='radio' name='learning' value=3>3</input>
+                                <input type='radio' name='learning' value=4>4</input>
+                                <input type='radio' name='learning' value=5>5</input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>시험난이도</td>
+                            <td colspan=2>
+                                <input type='radio' name='test_difficulty' value=1>1</input>
+                                <input type='radio' name='test_difficulty' value=2>2</input>
+                                <input type='radio' name='test_difficulty' value=3>3</input>
+                                <input type='radio' name='test_difficulty' value=4>4</input>
+                                <input type='radio' name='test_difficulty' value=5>5</input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>의견</td>
+                            <td colspan=2>
+                                <input type='text' name='comment'/>
+                            </td>
+                    </table>
+                    <input type='button' value='제출' rowspan=4 onClick=\"writeButton()\"/>
+                </form>";
         }
     }
 ?>
+<script>
+    function writeButton(){
+        var nullCount = 0; 
+        var arrToConfirm=['assignment_amount', 'achievement', 'learning', 'test_difficulty', 'comment'];
+        for (let iterator of arrToConfirm){
+            if(document.forms['writeData'][iterator].value == ""){
+                nullCount+=1;
+            }
+        }
+        if(nullCount > 0){
+            alert("모든 필드를 채워 주세요!");
+        }
+        else{
+            var course_id = document.createElement('input');
+            course_id.setAttribute('type', 'hidden')
+            course_id.setAttribute('name', 'course_id')
+            course_id.setAttribute('value', getParameterByName('course_id'));
+            document.getElementById('writeData').appendChild(course_id);
+            var sec_id = document.createElement('input');
+            sec_id.setAttribute('type', 'hidden')
+            sec_id.setAttribute('name', 'sec_id')
+            sec_id.setAttribute('value', getParameterByName('sec_id'));
+            document.getElementById('writeData').appendChild(sec_id);
+            var year = document.createElement('input');
+            year.setAttribute('type', 'hidden')
+            year.setAttribute('name', 'year')
+            year.setAttribute('value', getParameterByName('year'));
+            document.getElementById('writeData').appendChild(year);
+            var semester = document.createElement('input');
+            semester.setAttribute('type', 'hidden')
+            semester.setAttribute('name', 'semester')
+            semester.setAttribute('value', getParameterByName('semester'));
+            document.getElementById('writeData').appendChild(semester);
+            document.getElementById('writeData').submit();
+        }
+    }
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
