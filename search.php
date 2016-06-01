@@ -6,207 +6,7 @@
     <style>
       @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
       body {margin:0;background:#E5E5E5;font-weight:300;color:#404040;font-family: 'Nanum Gothic', serif;letter-spacing:.1px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-hgroup { 
-	text-align:center;
-	margin-top: 4em;
-}
 
-h1, h3 { font-weight: 300; }
-
-h1 { color: #636363; }
-
-h3 { color: #4a89dc; }
-
-form {
-	width: 380px;
-	margin: 4em auto;
-	padding: 3em 2em 2em 2em;
-	background: #fafafa;
-	border: 1px solid #ebebeb;
-	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-}
-
-.group { 
-	position: relative; 
-	margin-bottom: 45px; 
-}
-
-input {
-	font-size: 18px;
-	padding: 10px 10px 10px 5px;
-	-webkit-appearance: none;
-	display: block;
-	background: #fafafa;
-	color: #636363;
-	width: 100%;
-	border: none;
-	border-radius: 0;
-	border-bottom: 1px solid #757575;
-}
-
-input:focus { outline: none; }
-
-
-/* Label */
-
-label {
-	color: #999; 
-	font-size: 18px;
-	font-weight: normal;
-	position: absolute;
-	pointer-events: none;
-	left: 5px;
-	top: 10px;
-	transition: all 0.2s ease;
-}
-
-
-/* active */
-
-input:focus ~ label, input.used ~ label {
-	top: -20px;
-  transform: scale(.75); left: -2px;
-	/* font-size: 14px; */
-	color: #4a89dc;
-}
-
-
-/* Underline */
-
-.bar {
-	position: relative;
-	display: block;
-	width: 100%;
-}
-
-.bar:before, .bar:after {
-	content: '';
-	height: 2px; 
-	width: 0;
-	bottom: 1px; 
-	position: absolute;
-	background: #4a89dc; 
-	transition: all 0.2s ease;
-}
-
-.bar:before { left: 50%; }
-
-.bar:after { right: 50%; }
-
-
-/* active */
-
-input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
-
-
-/* Highlight */
-
-.highlight {
-	position: absolute;
-	height: 60%; 
-	width: 100px; 
-	top: 25%; 
-	left: 0;
-	pointer-events: none;
-	opacity: 0.5;
-}
-
-
-/* active */
-
-input:focus ~ .highlight {
-	animation: inputHighlighter 0.3s ease;
-}
-
-
-/* Animations */
-
-@keyframes inputHighlighter {
-	from { background: #4a89dc; }
-	to 	{ width: 0; background: transparent; }
-}
-
-
-/* Button */
-
-.button {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  margin: .3em 0 1em 0;
-  width: 100%;
-  vertical-align: middle;
-  color: #636363;
-  font-size: 16px;
-  line-height: 20px;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
-  letter-spacing: 1px;
-  background: transparent;
-  border: 0;
-  border-bottom: 2px solid #3160B6;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.button:focus { outline: 0; }
-
-
-/* Button modifiers */
-
-.buttonBlue {
-	color:#fff;
-  background: #4a89dc;
-  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
-}
-
-.buttonBlue:hover { background: #357bd8; }
-
-
-/* Ripples container */
-
-.ripples {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: transparent;
-}
-
-
-/* Ripples circle */
-
-.ripplesCircle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.ripples.is-active .ripplesCircle {
-  animation: ripples .4s ease-in;
-}
-
-
-/* Ripples animation */
-
-@keyframes ripples {
-  0% { opacity: 0; }
-
-  25% { opacity: 1; }
-
-  100% {
-    width: 200%;
-    padding-bottom: 200%;
-    opacity: 0;
-  }
-}
 
     #floating-button{
       width: 55px;
@@ -412,91 +212,412 @@ input:focus ~ .highlight {
       font-weight:bold;
       text-align:right;
       color: white;
-      height:36px;
+      height:50px;
       background:#03A9F4;
       box-shadow:0px 2px 6px 3px rgba(0, 0, 0, 0.2);
       padding-top:14px;
       padding-right:100px;
       padding-left: 100px;
     }
-    @-moz-keyframes ripple {
-    0%, 100% {
-        opacity: 0;
-    }
-    1% {
-        opacity: 1;
-    }
-    }
-    @-webkit-keyframes ripple {
-    0%, 100% {
-        opacity: 0;
-    }
-    1% {
-        opacity: 1;
-    }
-    }
-    @keyframes ripple {
-    0%, 100% {
-        opacity: 0;
-    }
-    1% {
-        opacity: 1;
-    }
-    }
-    .radio-input {
-    display: none;
-    }
-    .radio-label {
-    position: relative;
-    cursor: pointer;
-    padding-left: 28px;
-    }
-    .radio-label:before, .radio-label:after {
-    position: absolute;
-    content: "";
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    }
-    .radio-label:before {
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    background-color: #1565C0;
-    -moz-box-shadow: inset 0 0 0 13px #E0E0E0;
-    -webkit-box-shadow: inset 0 0 0 13px #E0E0E0;
-    box-shadow: inset 0 0 0 13px #E0E0E0;
-    }
-    .radio-label:after {
-    top: 49%;
-    left: 9px;
-    width: 54px;
-    height: 54px;
-    background-color: rgba(255, 255, 255, 0.3);
-    -moz-transform: translate(-50%, -50%) scale(0);
-    -ms-transform: translate(-50%, -50%) scale(0);
-    -webkit-transform: translate(-50%, -50%) scale(0);
-    transform: translate(-50%, -50%) scale(0);
-    }
-    .radio-input:checked + .radio-label:before {
-    -moz-box-shadow: inset 0 0 0 4px #E0E0E0;
-    -webkit-box-shadow: inset 0 0 0 4px #E0E0E0;
-    box-shadow: inset 0 0 0 4px #E0E0E0;
-    }
-    .radio-input:checked + .radio-label:after {
-    -moz-transform: translate(-50%, -50%) scale(1);
-    -ms-transform: translate(-50%, -50%) scale(1);
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-    -moz-animation: ripple 1s forwards;
-    -webkit-animation: ripple 1s forwards;
-    animation: ripple 1s forwards;
-    }
+    @import url(http://fonts.googleapis.com/css?family=Roboto);
+body,
+input,
+select,
+textarea,
+body * {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+body::after, body::before,
+input::after,
+input::before,
+select::after,
+select::before,
+textarea::after,
+textarea::before,
+body *::after,
+body *::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 2em;
+}
+
+.container {
+  max-width: 40rem;
+  margin: 5rem auto;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  padding: 3rem 5rem 0;
+  border-radius: 1px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: box-shadow 0.28s ease, -webkit-transform 0.28s ease;
+  transition: box-shadow 0.28s ease, -webkit-transform 0.28s ease;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
+  transition: box-shadow 0.28s ease, transform 0.28s ease, -webkit-transform 0.28s ease;
+}
+
+.button-container {
+  text-align: center;
+}
+
+fieldset {
+  margin: 0 0 3rem;
+  padding: 0;
+  border: none;
+}
+
+.form-radio,
+.form-group {
+  position: relative;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.form-inline > .form-group,
+.form-inline > .btn {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.form-help {
+  margin-top: 0.125rem;
+  margin-left: 0.125rem;
+  color: #b3b3b3;
+  font-size: 0.8rem;
+}
+.checkbox .form-help, .form-radio .form-help, .form-group .form-help {
+  position: absolute;
+  width: 100%;
+}
+.checkbox .form-help {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.form-radio .form-help {
+  padding-top: 0.25rem;
+  margin-top: -1rem;
+}
+
+.form-group input {
+  height: 1.9rem;
+}
+.form-group textarea {
+  resize: none;
+}
+.form-group select {
+  width: 100%;
+  font-size: 1rem;
+  height: 1.6rem;
+  padding: 0.125rem 0.125rem 0.0625rem;
+  background: none;
+  border: none;
+  line-height: 1.6;
+  box-shadow: none;
+}
+.form-group .control-label {
+  position: absolute;
+  top: 0.25rem;
+  pointer-events: none;
+  padding-left: 0.125rem;
+  z-index: 1;
+  color: #b3b3b3;
+  font-size: 1rem;
+  font-weight: normal;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+}
+.form-group .bar {
+  position: relative;
+  border-bottom: 0.0625rem solid #999;
+  display: block;
+}
+.form-group .bar::before {
+  content: '';
+  height: 0.125rem;
+  width: 0;
+  left: 50%;
+  bottom: -0.0625rem;
+  position: absolute;
+  background: #337ab7;
+  -webkit-transition: left 0.28s ease, width 0.28s ease;
+  transition: left 0.28s ease, width 0.28s ease;
+  z-index: 2;
+}
+.form-group input,
+.form-group textarea {
+  display: block;
+  background: none;
+  padding: 0.125rem 0.125rem 0.0625rem;
+  font-size: 1rem;
+  border-width: 0;
+  border-color: transparent;
+  line-height: 1.9;
+  width: 100%;
+  color: transparent;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+  box-shadow: none;
+}
+.form-group input[type="file"] {
+  line-height: 1;
+}
+.form-group input[type="file"] ~ .bar {
+  display: none;
+}
+.form-group select,
+.form-group input:focus,
+.form-group input:valid,
+.form-group input.form-file,
+.form-group input.has-value,
+.form-group textarea:focus,
+.form-group textarea:valid,
+.form-group textarea.form-file,
+.form-group textarea.has-value {
+  color: #333;
+}
+.form-group select ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group input:valid ~ .control-label,
+.form-group input.form-file ~ .control-label,
+.form-group input.has-value ~ .control-label,
+.form-group textarea:focus ~ .control-label,
+.form-group textarea:valid ~ .control-label,
+.form-group textarea.form-file ~ .control-label,
+.form-group textarea.has-value ~ .control-label {
+  font-size: 0.8rem;
+  color: gray;
+  top: -1rem;
+  left: 0;
+}
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+.form-group select:focus ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group textarea:focus ~ .control-label {
+  color: #337ab7;
+}
+.form-group select:focus ~ .bar::before,
+.form-group input:focus ~ .bar::before,
+.form-group textarea:focus ~ .bar::before {
+  width: 100%;
+  left: 0;
+}
+
+.checkbox label,
+.form-radio label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 2rem;
+  text-align: left;
+  color: #333;
+  display: block;
+}
+.checkbox input,
+.form-radio input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.radio {
+  margin-bottom: 1rem;
+}
+.radio .helper {
+  position: absolute;
+  top: -0.25rem;
+  left: -0.25rem;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #999;
+}
+.radio .helper::before, .radio .helper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  -webkit-transition: -webkit-transform 0.28s ease;
+  transition: -webkit-transform 0.28s ease;
+  transition: transform 0.28s ease;
+  transition: transform 0.28s ease, -webkit-transform 0.28s ease;
+  border-radius: 50%;
+  border: 0.125rem solid currentColor;
+}
+.radio .helper::after {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.radio label:hover .helper {
+  color: #337ab7;
+}
+.radio input:checked ~ .helper::after {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+.radio input:checked ~ .helper::before {
+  color: #337ab7;
+}
+
+.checkbox {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.checkbox .helper {
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  -webkit-transition: border-color 0.28s ease;
+  transition: border-color 0.28s ease;
+}
+.checkbox .helper::before, .checkbox .helper::after {
+  position: absolute;
+  height: 0;
+  width: 0.2rem;
+  background-color: #337ab7;
+  display: block;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  border-radius: 0.25rem;
+  content: '';
+  -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+  transition: opacity 0.28s ease, height 0s linear 0.28s;
+  opacity: 0;
+}
+.checkbox .helper::before {
+  top: 0.65rem;
+  left: 0.38rem;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  box-shadow: 0 0 0 0.0625rem #fff;
+}
+.checkbox .helper::after {
+  top: 0.3rem;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.checkbox label:hover .helper {
+  color: #337ab7;
+}
+.checkbox input:checked ~ .helper {
+  color: #337ab7;
+}
+.checkbox input:checked ~ .helper::after, .checkbox input:checked ~ .helper::before {
+  opacity: 1;
+  -webkit-transition: height 0.28s ease;
+  transition: height 0.28s ease;
+}
+.checkbox input:checked ~ .helper::after {
+  height: 0.5rem;
+}
+.checkbox input:checked ~ .helper::before {
+  height: 1.2rem;
+  -webkit-transition-delay: 0.28s;
+          transition-delay: 0.28s;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: 1rem;
+}
+
+.has-error .legend.legend, .has-error.form-group .control-label.control-label {
+  color: #d9534f;
+}
+.has-error.form-group .form-help,
+.has-error.form-group .helper, .has-error.checkbox .form-help,
+.has-error.checkbox .helper, .has-error.radio .form-help,
+.has-error.radio .helper, .has-error.form-radio .form-help,
+.has-error.form-radio .helper {
+  color: #d9534f;
+}
+.has-error .bar::before {
+  background: #d9534f;
+  left: 0;
+  width: 100%;
+}
+
+.button {
+  position: relative;
+  background: currentColor;
+  border: 1px solid currentColor;
+  font-size: 1.1rem;
+  color: #4f93ce;
+  margin: 3rem 0;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  -webkit-transition: background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+  transition: background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.button span {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  background: #071017;
+  border: 50vh solid #1d4567;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+}
+.button:hover {
+  color: #337ab7;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+.button:active::before, .button:focus::before {
+  -webkit-transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+  transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+  transition: transform 1.12s ease, opacity 0.28s ease 0.364s;
+  transition: transform 1.12s ease, opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+.button:focus {
+  outline: none;
+}
 
     </style>
   </head>
@@ -520,38 +641,50 @@ input:focus ~ .highlight {
     <?php
     if(isset($_SESSION['member_id'])){
     echo
-    "<form method='get' id='searchData' action='search_handler.php'>
-        <div class='group'>
-            <input type='text' name='title'/>
-            <span class='highlight'></span><span class='bar'></span>
-            <label>과목명</label>
-        </div>
-        <div class='group'>
-            <input type='text' name='course_id'/>
-            <span class='highlight'></span><span class='bar'></span>
-            <label>학수번호</label>
-        </div>
-        <div class='group'>
-            <input type='text' name='dept_name'/>
-            <span class='highlight'></span><span class='bar'></span>
-            <label>학과명</label>
-        </div>
-        <div class='group'>
-            <input class='radio-input' type='radio' name='credits' value='' id='radio1' checked/>
-            <label class='radio-label' for='radio1'>고려하지 않음</label>
-            <input class='radio-input' type='radio' name='credits' value=1 id='radio2'/>
-            <label class='radio-label' for='radio2'>1</label>
-        </div>
-            <button type='submit' tabindex='3'class='button buttonBlue'>
-                로그인
-                <div class='ripples buttonRipples'><span class='ripplesCircle'></span></div>
-            </button>
-            <button type='button' name='sign_up' class='button'onclick='location.href='sign_up.php'>
-                회원가입
-                <div class='ripples buttonRipples'><span class='ripplesCircle'></span></div>
-            </button>
-        </div>
-    </form>";
+    "
+<div class='container'>
+  <form method='get' id='searchData' action='search_handler.php'>
+    <h1>과목 검색</h1>
+    <div class='form-group'>
+      <input type='text' name='title' required='required'/>
+      <label for='input' class='control-label'>과목명</label><i class='bar'></i>
+    </div>
+		<div class='form-group'>
+      <input type='text' name='course_id' required='required'/>
+      <label for='input' class='control-label'>학수번호</label><i class='bar'></i>
+    </div>
+		<div class='form-group'>
+      <input type='text' name='dept_name' required='required'/>
+      <label for='input' class='control-label'>학과명</label><i class='bar'></i>
+    </div>
+    학번
+    <div class='form-radio'>
+      <div class='radio'>
+        <label>
+          <input type='radio' name='credits' checked='checked'/><i class='helper' value='' /></i>고려하지 않음
+        </label>
+      </div>
+			<div class='radio'>
+        <label>
+          <input type='radio' name='credits' value=1 /><i class='helper'></i>1
+        </label>
+      </div>
+			<div class='radio'>
+        <label>
+          <input type='radio' name='credits' value=2 /><i class='helper'></i>2
+        </label>
+      </div>
+			<div class='radio'>
+        <label>
+          <input type='radio' name='credits' value=3 /><i class='helper'></i>3
+        </label>
+      </div>
+    </div>
+  </form>
+  <div class='button-container'>
+    <button type='button' onClick='searchButton()' class='button'><span>Submit</span></button>
+  </div>
+</div>";
     }
     else{
         echo "<script>alert('먼저 로그인해 주십시오!');history.back();</script>";
@@ -579,6 +712,7 @@ input:focus ~ .highlight {
             var nullCount = 0; 
             var arrToConfirm=['title', 'course_id', 'credits', 'dept_name'];
             for (let iterator of arrToConfirm){
+              console.log(document.forms['searchData'][iterator].value);
                 if(document.forms['searchData'][iterator].value == ""){
                     nullCount+=1;
                 }
@@ -590,40 +724,5 @@ input:focus ~ .highlight {
                 document.getElementById('searchData').submit();
             }
         }
-	$(window, document, undefined).ready(function() {
-
-    $('input').blur(function() {
-        var $this = $(this);
-        if ($this.val())
-        $this.addClass('used');
-        else
-        $this.removeClass('used');
-    });
-
-    var $ripples = $('.ripples');
-
-    $ripples.on('click.Ripples', function(e) {
-
-        var $this = $(this);
-        var $offset = $this.parent().offset();
-        var $circle = $this.find('.ripplesCircle');
-
-        var x = e.pageX - $offset.left;
-        var y = e.pageY - $offset.top;
-
-        $circle.css({
-        top: y + 'px',
-        left: x + 'px'
-        });
-
-        $this.addClass('is-active');
-
-    });
-
-    $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
-        $(this).removeClass('is-active');
-    });
-
-    });
     </script>
 </html>

@@ -20,7 +20,7 @@
         if($course_id != ""){
             $concat = $concat . "and course_id like '%" . $course_id . "%' ";
         }
-        if($credits != ""){
+        if($credits != "on"){
             $concat = $concat . "and credits=" . $credits . " ";
         }
         if($dept_name != ""){
@@ -65,7 +65,7 @@
         if($course_id != ""){
             $concat = $concat . "and course_id like '%" . $course_id . "%' ";
         }
-        if($credits != ""){
+        if($credits != "on"){
             $concat = $concat . "and credits=" . $credits . " ";
         }
         if($dept_name != ""){
