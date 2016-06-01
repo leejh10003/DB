@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(!isset($_POST['member_id']) || !isset($_POST['pass'])) exit;
 $member_id = $_POST['member_id'];
 $pass = $_POST['pass'];
@@ -17,6 +18,7 @@ if($result_fetched['member_id'] !== $member_id){
 else{
     session_start();
     $_SESSION['member_id'] = $member_id;
+    $_SESSION['level'] = $result_fetched['level'];
 }
 ?>
 <meta http-equiv='refresh' content='0;url=main.php'>

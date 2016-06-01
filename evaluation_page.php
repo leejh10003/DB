@@ -40,6 +40,9 @@
             echo "<td>" . $line['learning'] . "</td>";
             echo "<td>" . $line['test_difficulty'] . "</td>";
             echo "<td>" . $line['comment'] . "</td>";
+            if($_SESSION['level'] > 1){
+                echo "<td><a href='deleteEvaluation.php?member_id=" . $line['member_id'] . "&course_id=" . $course_id . "&sec_id=" . $sec_id . "&year=" . $year . "&semester=" . $semester . "'>삭제</a></td>";
+            }
         echo "</tr>";
         }
     echo "</table>\n";
