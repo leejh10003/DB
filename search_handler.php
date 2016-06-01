@@ -1,6 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['member_id'])){
+        $level=$_SESSION['level'];
         $title = $_GET['title'];
         $course_id = $_GET['course_id'];
         $credits = $_GET['credits'];
@@ -42,6 +43,9 @@
                 echo "\t\t<td>$col_value</td>\n";
             }
             echo "<td><a href='./sectionAdd.php?course_id=" . $line['course_id'] . "'>섹션 추가...</a></td>";
+            if($_SESSION['level'] > 1){
+                echo "<td><a href='deleteCourse.php?course_id=" . $line['course_id'] . "'>삭제</a></td>";
+            }
             echo "\t</tr>\n";
         }
         echo "</table>\n";
@@ -84,6 +88,9 @@
                 echo "\t\t<td>$col_value</td>\n";
             }
             echo "<td><a href='./evaluation_page.php?course_id=" . $line['course_id'] . "&sec_id=" . $line['sec_id'] . "&year=" . $line['year'] . "&semester=" . $line['semester'] . "'>" .$line['year']. "</td>";
+            if($_SESSION['level'] > 1){
+                echo "<td><a href='deleteSection.php?course_id=" . $line['course_id'] . "&sec_id=" . $line['sec_id'] . "&year=" . $line['year'] . "&semester=" . $line['semester'] . "'>삭제</a></td>";
+            }
             echo "\t</tr>\n";
         }
         echo "</table>\n";
