@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['member_id'])){
+    echo "<script>alert('이미 로그인되어 있습니다!');history.back();</script>";
+  }
+?>
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8" />
