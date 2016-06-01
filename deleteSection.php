@@ -25,3 +25,4 @@
             echo "<script>alert('섹션 삭제에 성공했습니다!');history.back();</script>";
         }
     }
+?>

@@ -23,3 +23,4 @@
             echo "<script>alert('평가 삭제에 성공했습니다!');history.back();</script>";
         }
     }
+?>
