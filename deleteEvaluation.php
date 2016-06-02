@@ -20,7 +20,7 @@
             $query = "delete from evaluation where member_id='" . $member_id . "' and course_id='" . $course_id . "' and sec_id='" . $sec_id . "' and year=" . $year . " and semester=" . $semester . ";";
             pg_query($query)
                 or die('db에 문제가 발생했습니다. 관리자에게 문의하십시오.: ' . pg_last_error());
-            echo "<script>alert('평가 삭제에 성공했습니다!');history.back();</script>";
+            echo "<script>alert('평가 삭제에 성공했습니다!');location.href='evaluation_page.php?course_id=" . $course_id . "&sec_id=" . $sec_id . "&year=" . $year . "&semester=" . $semester . "';</script>";
         }
     }
 ?>

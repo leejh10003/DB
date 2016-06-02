@@ -620,7 +620,7 @@ fieldset {
 
     </style>
   </head>
-  <body>
+  <body onload="document.refresh();">
     <nav class="toolbar">
     <?php
       session_start();
@@ -667,7 +667,7 @@ fieldset {
                     <div class='form-radio'>
                         <div class='radio'>
                             <label>
-                            <input type='radio' name='assignment_amount' checked='checked'/><i class='helper' value=1 /></i>1
+                            <input type='radio' name='assignment_amount' checked='checked' value=1 /><i class='helper'/></i>1
                             </label>
                         </div>
                                 <div class='radio'>
@@ -696,7 +696,7 @@ fieldset {
                     <div class='form-radio'>
                         <div class='radio'>
                             <label>
-                            <input type='radio' name='achievement' checked='checked'/><i class='helper' value=1 /></i>1
+                            <input type='radio' name='achievement' checked='checked' value=1 /><i class='helper'/></i>1
                             </label>
                         </div>
                                 <div class='radio'>
@@ -725,7 +725,7 @@ fieldset {
                     <div class='form-radio'>
                         <div class='radio'>
                             <label>
-                            <input type='radio' name='learning' checked='checked'/><i class='helper' value=1 /></i>1
+                            <input type='radio' name='learning' checked='checked' value=1 /><i class='helper'/></i>1
                             </label>
                         </div>
                                 <div class='radio'>
@@ -754,7 +754,7 @@ fieldset {
                     <div class='form-radio'>
                         <div class='radio'>
                             <label>
-                            <input type='radio' name='test_difficulty' checked='checked'/><i class='helper' value=1 /></i>1
+                            <input type='radio' name='test_difficulty' checked='checked' value=1 /><i class='helper'/></i>1
                             </label>
                         </div>
                                 <div class='radio'>
