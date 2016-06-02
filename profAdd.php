@@ -240,11 +240,6 @@ body *::before {
   box-sizing: border-box;
 }
 
-body {
-  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
-  background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
-}
-
 h1 {
   font-size: 2rem;
   text-align: center;
@@ -299,6 +294,9 @@ fieldset {
 .checkbox .form-help, .form-radio .form-help, .form-group .form-help {
   position: absolute;
   width: 100%;
+}
+.form-radio{
+    display:inline;
 }
 .checkbox .form-help {
   position: relative;
@@ -424,7 +422,7 @@ fieldset {
   padding-left: 2rem;
   text-align: left;
   color: #333;
-  display: block;
+  display: inline;
 }
 .checkbox input,
 .form-radio input {
@@ -436,13 +434,14 @@ fieldset {
 
 .radio {
   margin-bottom: 1rem;
+  display: inline;
 }
 .radio .helper {
   position: absolute;
   top: -0.25rem;
   left: -0.25rem;
   cursor: pointer;
-  display: block;
+  display: inline;
   font-size: 1rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -639,52 +638,30 @@ fieldset {
     ?>
     </nav>
     <?php
+    session_start();
     if(isset($_SESSION['member_id'])){
     echo
-    "
-<div class='container'>
-  <form method='get' id='searchData' action='search_handler.php'>
-    <h1>과목 검색</h1>
-    <div class='form-group'>
-      <input type='text' name='title' required='required'/>
-      <label for='input' class='control-label'>과목명</label><i class='bar'></i>
-    </div>
-		<div class='form-group'>
-      <input type='text' name='course_id' required='required'/>
-      <label for='input' class='control-label'>학수번호</label><i class='bar'></i>
-    </div>
-		<div class='form-group'>
-      <input type='text' name='dept_name' required='required'/>
-      <label for='input' class='control-label'>학과명</label><i class='bar'></i>
-    </div>
-    학번
-    <div class='form-radio'>
-      <div class='radio'>
-        <label>
-          <input type='radio' name='credits' checked='checked'/><i class='helper' value='' /></i>고려하지 않음
-        </label>
-      </div>
-			<div class='radio'>
-        <label>
-          <input type='radio' name='credits' value=1 /><i class='helper'></i>1
-        </label>
-      </div>
-			<div class='radio'>
-        <label>
-          <input type='radio' name='credits' value=2 /><i class='helper'></i>2
-        </label>
-      </div>
-			<div class='radio'>
-        <label>
-          <input type='radio' name='credits' value=3 /><i class='helper'></i>3
-        </label>
-      </div>
-    </div>
-  </form>
-  <div class='button-container'>
-    <button type='button' onClick='searchButton()' class='button'><span>검색</span></button>
-  </div>
-</div>";
+            "
+            <div class='container'>
+            <h1>교수 추가</h1>
+            <form method='get'  id='addProf' action='profAdd_handle.php'>
+                <div class='form-group'>
+                    <input type='text' name='prof_id' required='required'/>
+                    <label for='input' class='control-label'>교번</label><i class='bar'></i>
+                </div>
+                <div class='form-group'>
+                    <input type='text' name='name' required='required'/>
+                    <label for='input' class='control-label'>이름</label><i class='bar'></i>
+                </div>
+                <div class='form-group'>
+                    <input type='text' name='dept_name' required='required'/>
+                    <label for='input' class='control-label'>학과명</label><i class='bar'></i>
+                </div>
+                <div class='button-container'>
+                    <button type='button' onClick='submitButton()' class='button'><span>교수 추가</span></button>
+                </div>
+            </form>
+            </div>";
     }
     else{
         echo "<script>alert('먼저 로그인해 주십시오!');history.back();</script>";
@@ -716,23 +693,23 @@ fieldset {
         <p class="plus">+</p>
       </div>
     </div>
-  </body>
-    <script>
-        function searchButton(){
-            var nullCount = 0; 
-            var arrToConfirm=['title', 'course_id', 'credits', 'dept_name'];
-            for (let iterator of arrToConfirm){
-              console.log(document.forms['searchData'][iterator].value);
-                if(document.forms['searchData'][iterator].value == ""){
-                    nullCount+=1;
-                }
-            }
-            if(nullCount === arrToConfirm.length){
-                alert("최소한 하나의 값을 입력하세요!");
-            }
-            else{
-                document.getElementById('searchData').submit();
+</body>
+<script>
+    function submitButton(){
+        var nullCount = 0; 
+        var arrToConfirm=['prof_id', 'name', 'dept_name'];
+        for (let iterator of arrToConfirm){
+            if(document.forms['addProf'][iterator].value == ""){
+                nullCount+=1;
             }
         }
-    </script>
+        console.log(nullCount + ", " + arrToConfirm.length);
+        if(nullCount > 0){
+            alert("모든 란을 채워주세요!");
+        }
+        else{
+            document.getElementById('addProf').submit();
+        }
+    }
+</script>
 </html>

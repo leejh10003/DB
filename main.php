@@ -237,6 +237,13 @@
     ?>
     </nav>
     <div id="container-floating">
+      <a href='./profAdd.php'>
+      <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder">
+        <svg style="margin-left:8px;margin-top:8px;width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#000000" d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z" />
+        </svg>
+      </div>
+      </a>
       <a href='./search.php'>
       <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder">
         <svg style="margin-top:8px;margin-left:8px;width:24px;height:24px" viewBox="0 0 24 24">

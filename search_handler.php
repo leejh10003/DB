@@ -140,7 +140,7 @@
     }
 
     .nd5{
-      background-image: url('https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27');
+      background:#ffffff;
       background-size: 100%;
       right: 40px;
       bottom: 300px;
@@ -819,7 +819,7 @@
             
             $query = "select * from course where";
             $concat = "";
-            if(strlen($title . $course_id . $credits . $dept_name) === 0){
+            if(strlen($title . $course_id . $dept_name) === 0 && $credits === 'on'){
                 echo "<script>alert('잘못된 입력입니다.');history.back();</script>";
             }
             if($title != ""){
@@ -942,6 +942,13 @@
     ?>
     </div>
     <div id="container-floating">
+      <a href='./profAdd.php'>
+      <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder">
+        <svg style="margin-left:8px;margin-top:8px;width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#000000" d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z" />
+        </svg>
+      </div>
+      </a>
       <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder">
         <svg style="margin-top:8px;margin-left:8px;width:24px;height:24px" viewBox="0 0 24 24">
           <path fill="#ffffff" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
