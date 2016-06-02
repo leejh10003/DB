@@ -138,7 +138,7 @@
     }
 
     .nd5{
-      background-image: url('https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27');
+      background:#ffffff;
       background-size: 100%;
       right: 40px;
       bottom: 300px;
