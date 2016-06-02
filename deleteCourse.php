@@ -22,7 +22,7 @@
             $query = "delete from course where course_id='" . $course_id . "';";
             pg_query($query)
                 or die('db에 문제가 발생했습니다. 관리자에게 문의하십시오.: ' . pg_last_error());
-            echo "<script>alert('과목 삭제에 성공했습니다!');history.back();</script>";
+            echo "<script>alert('과목 삭제에 성공했습니다!');history.back();document.refresh();</script>";
         }
     }
 ?>
