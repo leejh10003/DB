@@ -21,7 +21,8 @@ else{
     }
     else{
         $sign_up_query = "INSERT INTO member VALUES ('" .$member_id. "','" .$pass. "');";
-        pg_query($dbconn, $sign_up_query);
+        pg_query($dbconn, $sign_up_query)
+            or die("<script>alert('입력된 값들에 문제가 있습니다');</script>");
         session_start();
         $_SESSION['member_id'] = $member_id;
     }
