@@ -18,7 +18,8 @@
         }
         else{
             $course_insert_query = "INSERT INTO section VALUES ('" . $course_id . "', '" . $sec_id . "', " . $year . ", " . $semester . ", '" . $prof_id . "');";
-            pg_query($dbconn, $course_insert_query);
+            pg_query($dbconn, $course_insert_query)
+                or die('<script>alert("섹션 등록에 실패했습니다!");history.back();</script>');
             echo "<script>alert('섹션 등록에 성공했습니다!');location.href='search.php';</script>";
         }
     }
