@@ -17,7 +17,8 @@
         }
         else{
             $course_insert_query = "INSERT INTO course VALUES ('" .$course_id. "', '" . $title . "', '" . $dept_name . "', " . $credits . ");";
-            pg_query($dbconn, $course_insert_query);
+            pg_query($dbconn, $course_insert_query)
+                or die('<script>alert("입력된 값에 문제가 있습니다.");history.back()</script>');
             echo "<script>alert('과목 등록에 성공했습니다!');location.href='search.php';</script>";
         }
     }
