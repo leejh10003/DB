@@ -643,6 +643,7 @@ fieldset {
     echo
             "
             <div class='container'>
+            <h1>과목 추가</h1>
             <form method='get'  id='addData' action='courseAdd_handle.php'>
                 <div class='form-group'>
                     <input type='text' name='title' required='required'/>

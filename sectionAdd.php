@@ -649,6 +649,7 @@ fieldset {
         echo 
             "
             <div class='container'>
+            <h1>섹션 추가</h1>
             <form method='post' id='sectionData' action='sectionAdd_handle.php'>
                 <div class='form-group'>
                     <input type='text' name='sec_id' required='required'/>
