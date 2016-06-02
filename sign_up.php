@@ -214,7 +214,7 @@ input:focus ~ .highlight {
   }
 }
 </style>
-<body>
+<body onload="document.refresh();">
 <hgroup>
   <h1>회원가입</h1>
 </hgroup>

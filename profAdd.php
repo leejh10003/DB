@@ -620,7 +620,7 @@ fieldset {
 
     </style>
   </head>
-  <body>
+  <body onload="document.refresh();">
     <nav class="toolbar">
     <?php
       session_start();
