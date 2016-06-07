@@ -663,7 +663,7 @@ fieldset {
                     학기
                     <div class='radio'>
                         <label>
-                        <input type='radio' name='semester' checked='checked'/><i class='helper' value=1 /></i>1
+                        <input type='radio' name='semester' checked='checked' value=1 /><i class='helper'></i>1
                         </label>
                     </div>
                             <div class='radio'>
